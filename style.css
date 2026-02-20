@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --pc: #A8B0B7;
+    --sc: #e8f911;
+    --tc: #11191D;
+}
+
+body{
+    background-color: var(--tc); /* Change to --tc after project completion*/
+    margin: 0px;
+    font-family: 'Montserrat',sans-serif;
+    color: var(--pc);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* Navigation Bar */
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.nav-scrolled {
+    background-color: var(--tc);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-bar-option{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    padding: 1% 8%;
+}
+
+.nav-bar-option li a {
+  display: block;
+  color: var(--pc);
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  position: absolute;
+  background-color: var(--sc);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0;
+  
+  /* Animation Properties */
+  opacity: 0;                /* Invisible */
+  visibility: hidden;        /* Prevents clicking links when hidden */
+  transform: translateY(-10px); /* Start slightly higher */
+  transition: all 0.4s ease;    /* Smooth transition for all properties */
+}
+
+.dropdown-content li a{
+    color: var(--tc);
+}
+
+.dropdown-btn{
+    transition: 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-btn {
+    color: var(--sc);
+}
+
+/* Home Pannel */
+.home-pannel{
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    /* background:url(assets/home-banner-img.jpg) no-repeat right top; */
+    width: 100%;
+    height: 900px;
+    padding-left: 90px;
+    padding-top: 1px;
+}
+
+.home-pannel-img{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    height: 900px;
+}
+
+.home-pannel-text{
+    color: var(--pc);
+    margin-top: 120px;
+    width: 700px;
+    font-size: 50px;
+}
+
+.home-pannel-text p{
+    font-size: 40px;
+    color: var(--pc);
+}
+.contact-us-button{
+    color: black;
+    font-size: 30px;
+    background-color: var(--sc);
+    border: none;
+    height: 70px;
+    width: 250px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Dim background */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--tc);
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid var(--sc);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: var(--pc);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px; top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--sc);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-form input, .modal-form textarea {
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--pc);
+    color: white;
+    font-family: inherit;
+}
+
+.modal-form input:focus { border-color: var(--sc); outline: none; }
+
+/* Service Pannel */
+.Service-pannel{
+    padding: 50px 90px 150px;
+}
+
+.Service-pannel-bar{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+
+.Service-pannel-bar-title{
+    color: var(--sc);
+}
+
+.Service-pannel-bar-desc{
+    width: 35%;
+    font-size: 30px;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.Service-pannel-card-row{
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between the cards */
+    padding: 20px 0;
+}
+
+.Service-pannel-card{
+    border: 1px solid var(--pc);
+    /* text-align: center; */
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+.Service-pannel-card-button{
+    border: 1px solid var(--pc);
+    border-radius: 50%;
+    background-color: var(--tc);
+    color: var(--pc);
+    font-size: 20px;
+}
+
+.Service-pannel-card:hover{
+    background-color: var(--pc);
+    color: var(--tc);
+}
+
+.Service-pannel-card:hover .Service-pannel-card-button{
+    background-color: var(--sc);
+    color: var(--tc);
+}
+
+.Service-card-row{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4%;
+}
+
+.Service-card{
+    text-align: center;
+    padding-top: 1.8%;
+    box-sizing: border-box;
+    background-color: var(--pc);
+    color: var(--tc);
+}
+
+.Service-card-img{
+    height: 250px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.Service-card-desc{
+    padding: 0 2%;
+}
+
+.Service-card-form{
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    padding-left: 7%;
+    font-size: 16px;
+    background-color: var(--pc);
+    border: none;
+    transition: 0.3s ease;
+}
+
+.Service-card:hover .Service-card-form{
+    background-color: var(--sc);
+    font-size: 20px;
+}
+
+/* Latest News */
+.Latest-news{
+    background-color: var(--pc);
+    color: var(--sc);
+    padding: 10px;
+}
+
+.Latest-news-nav-bar{
+    padding: 15px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items:start;
+}
+
+.Latest-news-nav-bar-text{
+    display: flex;
+    justify-content: space-between;
+    width: 38%;
+}
+
+.Latest-news-nav-bar-text h1{
+    font-size: 70px;
+}
+
+.Latest-news-more-blogs-btn{
+    background-color: var(--tc);
+    border: none;
+    color: var(--pc);
+    height: 40px;
+    width: 10%;
+    font-size: 20px;
+}
+
+.Latest-news-blog-row{
+    display: flex;
+    justify-content: center;
+}
+
+.Latest-news-blog{
+    width: 60%;
+}
+.Latest-news-blog-img{
+    width: 100%;
+}
+
+.Blog-card-info{
+    display: flex;
+    padding: 0 20px;
+    gap: 100px;
+    color: var(--tc);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--tc);
+    padding: 80px 90px 40px;
+    border-top: 1px solid rgba(168, 176, 183, 0.1);
+}
+
+/* TOP SECTION */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.footer-newsletter {
+    width: 45%;
+}
+
+.newsletter-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.subscribe-form {
+    display: flex;
+    border-bottom: 1px solid var(--pc);
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.subscribe-form input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+}
+
+.subscribe-form button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.footer-contact {
+    width: 35%;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(168, 176, 183, 0.2);
+    padding: 15px 0;
+}
+
+.contact-item .label {
+    color: var(--sc); font-weight: bold;
+}
+
+.contact-item .value {
+    color: white; font-size: 1.1rem;
+}
+
+/* MIDDLE SECTION */
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 100px;
+    width: 60%;
+}
+
+.link-column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-column li {
+    margin-bottom: 15px;
+}
+
+.link-column a {
+    color: var(--pc);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.link-column a:hover {
+    color: var(--sc);
+}
+
+.footer-office h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-office p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* BOTTOM SECTION */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.footer-logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-logo .slash {
+    color: var(--sc); margin-right: 5px;
+}
+
+/* Team Pannel */
+.Team-pannel{
+    /* border: 1px solid red; */
+    padding: 90px;
+}
+
+.Team-pannel-nav-bar{
+    /* border: 1px solid red; */
+    color: var(--sc);
+}
+
+.Team-pannel-main-display{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Main-display-desc{
+    font-size: 20px;
+    width: 40%;
+}
+
+.Main-display-member-card{
+    /* border: 1px solid red; */
+    /* height: 500px; */
+    width: 500px;
+    text-align: center;
+}
+
+.Main-display-member-img{
+    /* height: 500px; */
+    width: 100%;
+}
+
+.Main-display-member-desc{
+    font-size: 20px;
+    text-align: left;
+}
+
+.Team-pannel-member-card-row{
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Member-card{
+    /* border: 1px solid red; */
+    width: 500px;
+    text-align: center;
+}
+
+.Member-card-img-container{
+    background-color: var(--pc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Member-card-img{
+    width: 50%;
+}
+
+.Member-card-desc{
+    font-size: 20px;
+    text-align: left;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    /* Navigation Mobile Logic */
+    .nav-bar {
+        padding-left: 5%; height: 70px; align-items: center;
+    }
+    
+    .nav-toggle-label {
+        display: block;
+        padding: 20px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+        display: block; background: var(--pc); height: 2px; width: 25px; position: relative; transition: 0.3s;
+    }
+
+    .nav-toggle-label span::before {
+        content: ''; position: absolute; top: -8px;
+    }
+
+    .nav-toggle-label span::after {
+        content: ''; position: absolute; top: 8px;
+    }
+
+    .nav-bar-option {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 80%; height: 100vh;
+        background-color: var(--tc);
+        flex-direction: column;
+        padding-top: 80px;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+    
+    .nav-toggle:checked ~ .nav-bar-option {
+        right: 0;
+    }
+
+    /* Home Panel */
+    .home-pannel{
+        height: auto;
+        padding: 100px 5% 50px;
+        text-align: center;
+    }
+
+    .home-pannel-img{
+        width: 100%;
+        height: 75%;
+        object-fit: cover;
+    }
+
+    .home-pannel-text{
+        color: var(--sc);
+        width: 100%;
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .home-pannel-text p{
+        color:white;
+        font-size: 18px !important;
+    }
+
+    .contact-us-button{
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    /* Service Panels */
+    .Service-pannel{
+        padding: 40px 5%;
+    }
+
+    .Service-pannel-card-row{
+        grid-template-columns: 1fr;
+    }
+
+    .Service-card-row{
+        grid-template-columns: 1fr;
+    }
+    
+    .Service-card-img{
+        height: 180px;
+    }
+    
+    .Service-card-form{
+        color: inherit;
+    }
+
+    /* Latest News */
+    .Latest-news{
+        margin-top: 80px;
+    }
+    .Latest-news-nav-bar{
+        padding: 20px 5%;
+        /* flex-direction: column; */
+        gap: 20px;
+    }
+    .Latest-news-nav-bar-text {
+        width: 100%;
+        /* flex-direction: column; */
+    }
+    .Latest-news-nav-bar-text h1{
+        font-size: 40px;
+    }
+    .Latest-news-more-blogs-btn{
+        width: 40%;
+        height: 40px;
+        font-size: 13px;
+    }
+    .Latest-news-blog{
+        width: 80%;
+    }
+    .Blog-card-info{
+        font-size: 10px;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    /* Footer */
+    .footer{
+        padding: 40px 5%;
+    }
+    .footer-top, .footer-middle, .footer-bottom{
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-newsletter, .footer-contact, .footer-links{
+        width: 100%;
+    }
+    .subscribe-form{
+        flex-direction: column;
+        border-bottom: none;
+    }
+    .subscribe-form input{
+        border-bottom: 1px solid var(--pc);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .footer-links{
+        gap: 20px;
+        justify-content: center;
+    }
+    .footer-office{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Team Panel */
+    .Team-pannel {
+        padding: 80px 5%;
+    }
+
+    .Team-pannel-main-display {
+        flex-direction: column; /* Stacks the leader text and leader card */
+        gap: 30px;
+    }
+
+    .Main-display-desc {
+        width: 100%; /* Leader description takes full width */
+        font-size: 18px;
+    }
+
+    .Main-display-member-card {
+        border: 1px solid red;
+        width: 100%; /* Leader card takes full width */
+    }
+
+
+    .Team-pannel-member-card-row {
+        flex-direction: column; /* Stacks all other team members */
+        gap: 40px;
+        align-items: center;
+    }
+
+    .Member-card {
+        width: 100%; /* Individual cards expand to fill screen width */
+        display: flex;
+    }
+
+    .Member-card-img-container {
+        height: 250px; /* Gives a consistent height on mobile */
+        background-color: var(--tc);
+    }
+
+    .Member-card-img {
+        width: auto;
+        height: 80%; /* Keeps the portrait/headshot within bounds */
+    }
+
+    .Main-display-member-desc, .Member-card-desc {
+        text-align: center; /* Center text for better mobile aesthetics */
+        padding: 15px 0;
+    }
+}
